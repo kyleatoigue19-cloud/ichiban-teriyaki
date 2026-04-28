@@ -1,71 +1,58 @@
 body {
-  font-family: Arial;
   margin: 0;
-  background: #f4f4f4;
+  font-family: Arial;
+  background: #f7f7f7;
+  color: #222;
 }
 
-.header {
+.hero {
   background: #8b0000;
   color: white;
   text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin: 0;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  margin: 5px;
+  background: white;
+  color: #8b0000;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn.primary {
+  background: black;
+  color: white;
+}
+
+.info, .menu-preview, .action {
   padding: 30px;
-}
-
-.menu {
-  padding: 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-.menu h2 {
   text-align: center;
 }
 
-.item {
+.card {
   background: white;
+  margin: 10px auto;
   padding: 15px;
-  margin: 10px 0;
-  border-radius: 12px;
+  max-width: 300px;
+  border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.item h3 {
-  margin: 0;
-}
-
-button {
-  margin-top: 10px;
-  padding: 10px;
-  border: none;
-  background: #8b0000;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.cart {
-  background: white;
-  margin: 20px;
-  padding: 15px;
-  border-radius: 12px;
-}
-
-.order-btn {
-  width: 100%;
-  padding: 15px;
-  background: black;
-  color: white;
-  border: none;
-  margin-top: 10px;
-  border-radius: 8px;
-}
-
-.call-btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 15px;
-  background: green;
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #eee;
 }
