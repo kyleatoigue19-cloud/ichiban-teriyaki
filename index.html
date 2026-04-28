@@ -1,80 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ichiban Teriyaki</title>
-<link rel="stylesheet" href="style.css">
-</head>
+"use client";
 
-<body>
+import { useState } from "react";
 
-<header class="hero">
-  <div class="hero-overlay">
-    <h1>Ichiban Teriyaki</h1>
-    <p>Fresh Japanese & Asian Fusion in Tacoma</p>
-    <a href="#order" class="btn">Order Now</a>
-    <a href="tel:2535373441" class="btn secondary">Call Now</a>
-  </div>
-</header>
+export default function Site() {
+  const [tab, setTab] = useState("home");
 
-<section class="about">
-  <h2>About Us</h2>
-  <p>
-    Ichiban Teriyaki is a casual Japanese restaurant serving fresh teriyaki, wok dishes, fried rice,
-    and comfort Asian favorites. Known for generous portions, bold flavors, and affordable prices.
-  </p>
-  <p>
-    📍 8425 S Hosmer St, Tacoma, WA 98444
-  </p>
-</section>
+  const featured = [
+    { name: "Chicken Teriyaki", img: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092" },
+    { name: "Beef Bulgogi", img: "https://images.unsplash.com/photo-1625944525533-473f7f6c3f8a" },
+    { name: "Chicken Katsu", img: "https://images.unsplash.com/photo-1606755962773-d324e0a13086" }
+  ];
 
-<section class="featured">
-  <h2>Featured Dishes</h2>
+  const reviews = [
+    "Best teriyaki in Tacoma.",
+    "Great portions and friendly staff.",
+    "Always consistent and fresh."
+  ];
 
-  <div class="grid">
-    <div class="card">
-      <h3>Chicken Teriyaki</h3>
-      <p>Grilled chicken glazed in house teriyaki sauce</p>
-      <img src="https://unsplash.com/photos/cooked-foo-HH7OwIqETRo" />
+  return (
+    <div className="min-h-screen bg-white text-gray-900">
+
+      <header className="flex justify-between items-center p-6 border-b">
+        <h1 className="text-xl font-semibold">Ichiban Teriyaki</h1>
+        <div className="flex gap-6 text-sm">
+          <button onClick={() => setTab("home")}>Home</button>
+          <button onClick={() => setTab("menu")}>Menu</button>
+          <button onClick={() => setTab("reviews")}>Reviews</button>
+        </div>
+      </header>
+
+      {tab === "home" && (
+        <div>
+          <div className="h-[400px] w-full overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1604908176997-125f25cc500f" className="w-full h-full object-cover" />
+          </div>
+
+          <div className="max-w-5xl mx-auto p-6 space-y-10">
+            <div>
+              <h2 className="text-2xl font-semibold mb-3">About</h2>
+              <p className="text-gray-600">
+                Casual Japanese comfort food serving teriyaki, wok dishes, and fried rice. Known for large portions, fast service, and a family-style atmosphere.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold mb-4">Featured Dishes</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                {featured.map((item, i) => (
+                  <div key={i} className="space-y-2">
+                    <img src={item.img} className="rounded-xl w-full h-48 object-cover" />
+                    <p className="font-medium">{item.name}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold mb-4">Reviews</h2>
+              <div className="space-y-3">
+                {reviews.map((r, i) => (
+                  <div key={i} className="p-4 border rounded-xl text-gray-600">
+                    {r}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {tab === "menu" && (
+        <div className="max-w-4xl mx-auto p-6">
+          <h2 className="text-2xl font-semibold mb-4">Menu</h2>
+          <p className="text-gray-600">Full menu available in-store. Call to order.</p>
+        </div>
+      )}
+
+      {tab === "reviews" && (
+        <div className="max-w-4xl mx-auto p-6 space-y-3">
+          {reviews.map((r, i) => (
+            <div key={i} className="p-4 border rounded-xl">{r}</div>
+          ))}
+        </div>
+      )}
+
+      <a href="tel:2535373441" className="fixed bottom-6 right-6 bg-black text-white px-5 py-3 rounded-full text-sm">
+        Call
+      </a>
+
     </div>
-
-    <div class="card">
-      <h3>Orange Chicken</h3>
-      <p>Crispy chicken with tangy orange glaze</p>
-    </div>
-
-    <div class="card">
-      <h3>Beef Short Ribs</h3>
-      <p>Premium grilled ribs with savory teriyaki flavor</p>
-    </div>
-  </div>
-</section>
-
-<section class="reviews">
-  <h2>Customer Reviews</h2>
-
-  <div class="review">
-    <p>"The young man working there was very friendly and helpful. The food came out fast and was delicious. I got the spicy pork and it's perfect. Hot enough to make you sweat, but not regret. The portion could serve two people, so if your partner likes the same food it becomes very cheap. I plan to go again.Food: 5/5  |  Service: 5/5  |  Atmosphere: 5/5 Noise level Very quiet Wait time No wait."</p>
-    <span>- Local</span>
-  </div>
-
-  <div class="review">
-    <p>"Just ate here , was not expecting what I got. The food was delicious. Mine was so good I ate half the wife's too lol definitely recommend a visit. Food: 5/5  |  Service: 5/5  |  Atmosphere: 4/5s."</p>
-    <span>- Local</span>
-  </div>
-
-  <div class="review">
-    <p>"Soon as I walk in this place, me and the owner giggle a bit because she already knows exactly what I'm gonna order. I don’t even have to say a word lol. I love it here. Family business vibes — I can never go anywhere else because they treat me like family now. Best in Tacoma! 🌻❣️🙏🏾"</p>
-    <span>- Local</span>
-  </div>
-</section>
-
-<section id="order" class="cta">
-  <h2>Ready to Eat?</h2>
-  <p>Order pickup or delivery today</p>
-  <a href="tel:2535373441" class="btn">Call to Order</a>
-</section>
-
-</body>
-</html>
+  );
+}
