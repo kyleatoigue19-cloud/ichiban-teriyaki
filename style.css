@@ -1,48 +1,71 @@
 body {
   font-family: Arial;
   margin: 0;
-  background: #f5f5f5;
+  background: #f4f4f4;
 }
 
 .header {
-  background: #b91c1c;
+  background: #8b0000;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 30px;
 }
 
-.call-btn {
-  display: inline-block;
-  margin-top: 10px;
-  background: green;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 8px;
-  text-decoration: none;
+.menu {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
-.menu, .cart {
-  padding: 20px;
+.menu h2 {
+  text-align: center;
 }
 
 .item {
   background: white;
   padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 10px;
+  margin: 10px 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.item h3 {
+  margin: 0;
 }
 
 button {
-  padding: 8px 12px;
-  margin-top: 5px;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background: #8b0000;
+  color: white;
+  border-radius: 8px;
   cursor: pointer;
 }
 
+.cart {
+  background: white;
+  margin: 20px;
+  padding: 15px;
+  border-radius: 12px;
+}
+
 .order-btn {
-  background: black;
-  color: white;
   width: 100%;
   padding: 15px;
-  margin-top: 10px;
+  background: black;
+  color: white;
   border: none;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.call-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: green;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
 }
