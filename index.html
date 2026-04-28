@@ -1,80 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ichiban Teriyaki</title>
-<link rel="stylesheet" href="style.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ichiban</title>
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --card: #161616;
+      --text: #f5f5f5;
+      --muted: #a0a0a0;
+      --accent: #d4a85f;
+    }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    header {
+      padding: 24px;
+      text-align: center;
+      border-bottom: 1px solid #222;
+    }
+
+    header h1 {
+      font-size: 28px;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      padding: 12px;
+      border-bottom: 1px solid #222;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    nav button.active {
+      color: var(--accent);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 24px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 12px;
+      border-radius: 10px;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      height: 140px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .review {
+      padding: 12px;
+      background: var(--card);
+      border-radius: 10px;
+      margin-top: 10px;
+      color: var(--muted);
+    }
+  </style>
+</head>
 <body>
 
-<header class="hero">
-  <div class="hero-overlay">
-    <h1>Ichiban Teriyaki</h1>
-    <p>Fresh Japanese & Asian Fusion in Tacoma</p>
-    <a href="#order" class="btn">Order Now</a>
-    <a href="tel:2535373441" class="btn secondary">Call Now</a>
-  </div>
+<header>
+  <h1>ICHIBAN</h1>
 </header>
 
-<section class="about">
-  <h2>About Us</h2>
-  <p>
-    Ichiban Teriyaki is a casual Japanese restaurant serving fresh teriyaki, wok dishes, fried rice,
-    and comfort Asian favorites. Known for generous portions, bold flavors, and affordable prices.
-  </p>
-  <p>
-    📍 8425 S Hosmer St, Tacoma, WA 98444
-  </p>
-</section>
+<nav>
+  <button class="active" onclick="showTab('home')">Home</button>
+  <button onclick="showTab('menu')">Menu</button>
+  <button onclick="showTab('reviews')">Reviews</button>
+</nav>
 
-<section class="featured">
-  <h2>Featured Dishes</h2>
+<div class="container">
 
-  <div class="grid">
-    <div class="card">
-      <h3>Chicken Teriyaki</h3>
-      <p>Grilled chicken glazed in house teriyaki sauce</p>
-      <img src="https://unsplash.com/photos/cooked-foo-HH7OwIqETRo" />
+  <!-- HOME -->
+  <section id="home">
+    <div class="hero">
+      <h2>Fresh. Fast. Japanese Comfort Food.</h2>
+      <p>Teriyaki • Wok • Fried Rice made daily</p>
     </div>
 
-    <div class="card">
-      <h3>Orange Chicken</h3>
-      <p>Crispy chicken with tangy orange glaze</p>
+    <h3>Featured Dishes</h3>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1604908177522-0406f03a3a2c" />
+        <h3>Chicken Teriyaki</h3>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086" />
+        <h3>Beef Wok</h3>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1604152135912-04a022e23696" />
+        <h3>Fried Rice</h3>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Beef Short Ribs</h3>
-      <p>Premium grilled ribs with savory teriyaki flavor</p>
+  <!-- MENU -->
+  <section id="menu" class="hidden">
+    <h3>Menu</h3>
+    <div class="grid">
+      <div class="card"><h3>Teriyaki</h3></div>
+      <div class="card"><h3>Wok</h3></div>
+      <div class="card"><h3>Fried Rice</h3></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="reviews">
-  <h2>Customer Reviews</h2>
+  <!-- REVIEWS -->
+  <section id="reviews" class="hidden">
+    <h3>Reviews</h3>
+    <div class="review">“Best teriyaki spot in town.”</div>
+    <div class="review">“Fast, clean, and consistent.”</div>
+    <div class="review">“Wok dishes are insane.”</div>
+  </section>
 
-  <div class="review">
-    <p>"The young man working there was very friendly and helpful. The food came out fast and was delicious. I got the spicy pork and it's perfect. Hot enough to make you sweat, but not regret. The portion could serve two people, so if your partner likes the same food it becomes very cheap. I plan to go again.Food: 5/5  |  Service: 5/5  |  Atmosphere: 5/5 Noise level Very quiet Wait time No wait."</p>
-    <span>- Local</span>
-  </div>
+</div>
 
-  <div class="review">
-    <p>"Just ate here , was not expecting what I got. The food was delicious. Mine was so good I ate half the wife's too lol definitely recommend a visit. Food: 5/5  |  Service: 5/5  |  Atmosphere: 4/5s."</p>
-    <span>- Local</span>
-  </div>
+<script>
+function showTab(tab) {
+  document.querySelectorAll('section').forEach(s => s.classList.add('hidden'));
+  document.getElementById(tab).classList.remove('hidden');
 
-  <div class="review">
-    <p>"Soon as I walk in this place, me and the owner giggle a bit because she already knows exactly what I'm gonna order. I don’t even have to say a word lol. I love it here. Family business vibes — I can never go anywhere else because they treat me like family now. Best in Tacoma! 🌻❣️🙏🏾"</p>
-    <span>- Local</span>
-  </div>
-</section>
-
-<section id="order" class="cta">
-  <h2>Ready to Eat?</h2>
-  <p>Order pickup or delivery today</p>
-  <a href="tel:2535373441" class="btn">Call to Order</a>
-</section>
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+</script>
 
 </body>
 </html>
