@@ -160,35 +160,16 @@
   </section>
 
   <!-- REVIEWS -->
- <section class="reviews">
-  <h2>What Customers Say</h2>
+  <section id="reviews" class="hidden">
+    <h3>Reviews</h3>
+    <div class="review">“Best teriyaki spot in town.”</div>
+    <div class="review">“Fast, clean, and consistent.”</div>
+    <div class="review">“Wok dishes are insane.”</div>
+  </section>
 
-  <div class="slider">
-    <div class="track">
+</div>
 
-      <div class="card">
-        <p>“Food is always fresh and portions are huge. Staff treats you like family.”</p>
-        <span>⭐ 5.0 — Google Review</span>
-      </div>
-
-      <div class="card">
-        <p>“Best teriyaki in Tacoma. Fast service and great prices.”</p>
-        <span>⭐ 5.0 — Google Review</span>
-      </div>
-
-      <div class="card">
-        <p>“Spicy pork combo is unbeatable. I come here every week.”</p>
-        <span>⭐ 4.8 — Google Review</span>
-      </div>
-
-      <div class="card">
-        <p>“Huge portions, friendly staff, always consistent quality.”</p>
-        <span>⭐ 5.0 — Google Review</span>
-      </div>
-
-    </div>
-  </div>
-</section>
+<script>
 function showTab(tab) {
   document.querySelectorAll('section').forEach(s => s.classList.add('hidden'));
   document.getElementById(tab).classList.remove('hidden');
