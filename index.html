@@ -27,57 +27,40 @@
   <p>📍 8425 S Hosmer St • ⭐ 4.2 (295 reviews)</p>
 </section>
 
-<section id="menu" class="menu">
+<div class="tabs">
 
-  <h2>Popular Dishes</h2>
+  <button class="tab-button active" onclick="showTab('teriyaki')">Teriyaki</button>
+  <button class="tab-button" onclick="showTab('wok')">Wok</button>
+  <button class="tab-button" onclick="showTab('friedrice')">Fried Rice</button>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1604908176997-125f25cc500f" />
-    <h3>Chicken Teriyaki</h3>
-    <p>$17.59</p>
-  </div>
+</div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1606756790138-261d2b21cd75" />
-    <h3>Beef Teriyaki</h3>
-    <p>$19.79</p>
-  </div>
+<div id="teriyaki" class="tab-content active">
+  <h2>Teriyaki</h2>
+  <p>Chicken Teriyaki - $17.59</p>
+  <p>Spicy Chicken - $18.69</p>
+  <p>Beef Teriyaki - $19.79</p>
+  <p>Pork Teriyaki - $19.79</p>
+  <p>Tofu Teriyaki - $19.79</p>
+  <p>Shrimp Teriyaki - $19.79</p>
+  <p>Beef Short Ribs - $31.89</p>
+</div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1604908554027-7f5b5b0b0b9d" />
-    <h3>Orange Chicken</h3>
-    <p>$19.79</p>
-  </div>
+<div id="wok" class="tab-content">
+  <h2>Chinese Wok</h2>
+  <p>Broccoli Beef - $20.89</p>
+  <p>Honey Garlic Chicken - $19.79</p>
+  <p>Sesame Chicken - $19.79</p>
+  <p>Mongolian Beef - $20.89</p>
+  <p>Kung Pao Chicken - $19.79</p>
+  <p>Orange Chicken - $19.79</p>
+</div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b" />
-    <h3>Fried Rice Combo</h3>
-    <p>$20.89</p>
-  </div>
-
-</section>
-
-<section class="action">
-  <h2>Visit or Order</h2>
-  <a class="btn primary" href="tel:2535373441">Call to Order</a>
-  <a class="btn" href="https://www.google.com/maps?q=8425+S+Hosmer+St+Tacoma+WA" target="_blank">
-    Get Directions
-  </a>
-</section>
-
-<footer>
-  <p>© Ichiban Teriyaki • Fresh made daily</p>
-</footer>
-
-</body>
-</html>
-<!-- IMAGE GALLERY SECTION -->
-<section class="gallery">
-  <h2>Our Food</h2>
-  <div class="gallery-grid">
-    <img src="images/teriyaki.jpg">
-    <img src="images/katsu.jpg">
-    <img src="images/friedrice.jpg">
-    <img src="images/yakisoba.jpg">
-  </div>
-</section>
+<div id="friedrice" class="tab-content">
+  <h2>Fried Rice</h2>
+  <p>Chicken Fried Rice - $17.59</p>
+  <p>Beef Fried Rice - $18.69</p>
+  <p>Shrimp Fried Rice - $19.79</p>
+  <p>Bacon Fried Rice - $19.79</p>
+  <p>Combo Fried Rice - $20.89</p>
+</div>
